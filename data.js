@@ -58,26 +58,19 @@ let slotdates = [
   },
 ];
 
-let newUser = [
-  {
-    name: "Adi",
-    number: 9650,
-    bookedSlot: "21 May, 8:00",
-    selectedModule: "Normally Soiled",
-  },
+let users = [
+  // {
+  //   name: "Adi",
+  //   number: 9650,
+  //   bookedSlot: "21 May, 8:00",
+  //   selectedModule: "Normally Soiled",
+  // },
 ];
 
-let currentUSer = [
+let currentUser = 
   {
-    username: "Deepak",
-    number: "9650",
-    bookedSlot: "21 May, 8:00",
-    selectedModule: "Normally Soiled",
-  },
-  {
-    username: "Adi",
-    number: "9650",
-    bookedSlot: "21 May, 10:00",
-    selectedModule: "Heavy Soiled",
-  },
-];
+    // username: "Deepak",
+    // number: "9650",
+    // bookedSlot: "21 May, 8:00",
+    // selectedModule: "Normally Soiled",
+  }
