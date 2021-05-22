@@ -1,0 +1,38 @@
+@import "reset";
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 32px;
+  border: 1px solid;
+  text-align: center;
+}
+.display {
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 1px solid;
+  height: 200px;
+  width: 400px;
+}
+button {
+  margin: 50px 0;
+  border: 0;
+  padding: 32px;
+  cursor: pointer;
+}
+
+// Login
+.display-off {
+  display: none;
+}
+.login {
+  // display: none;
+}
+.userinfo {
+  text-align: right;
+  .signout {
+    width: 10%;
+    border: 1px solid;
+  }
+}
