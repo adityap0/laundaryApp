@@ -58,14 +58,19 @@ let slotdates = [
   },
 ];
 
-let users = [
-  // {
-  //   name: "Adi",
-  //   number: 9650,
-  //   bookedSlot: "21 May, 8:00",
-  //   selectedModule: "Normally Soiled",
-  // },
-];
+localStorage.setItem("slotdates", JSON.stringify(slotdates));
+
+// let users = [
+//   // {
+//   //   name: "Adi",
+//   //   number: 9650,
+//   //   bookedSlot: "21 May, 8:00",
+//   //   selectedModule: "Normally Soiled",
+//   // },
+// ];
+let users = localStorage.getItem('users')
+ ? JSON.parse(localStorage.getItem('users'))
+ : [] ;
 
 let currentUser = 
   {

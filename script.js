@@ -3,8 +3,8 @@ let process = document.querySelector(".process");
 let login = document.querySelector(".login");
 let form = document.querySelector("form");
 
-let userName, userNum, userModule, userSlot;
-let pIndex, index ;
+let userName, userNum, userModule, bookedSlot, bookedDate;
+let parentSlotIndex, slotIndex ;
 
 form.addEventListener("submit", handleForm);
 function handleForm(event) {
@@ -63,15 +63,18 @@ function handleSubmit(event) {
     submitWashingmode.innerText = "Confirm";
 
   }else{
-    
+    console.log(event)
     
     currentUser.username = userName;
     currentUser.number = userNum;
-    currentUser.bookedSlot = userSlot;
+    currentUser.bookedSlot = bookedSlot;
+    currentUser.bookedDate = bookedDate;
     currentUser.selectedModule = userModule
-    slotdates[pIndex].slot[index].isTrue = false;
+    slotdates[parentSlotIndex].slot[slotIndex].isTrue = false;
+    localStorage.setItem("slotdates", JSON.stringify(slotdates));
 
      users.push(currentUser);
+     localStorage.setItem("users", JSON.stringify(users));
      currentUSer = {};
      alert("your slot has booked.")
   }
@@ -108,70 +111,36 @@ function createCalender() {
     ul.append(li);
     calenderoot.append(li);
   });
+
+  disableSelectedSlot()
 }
 
-let btnNow;
 function handleSlot(event) {
-  let allBtn = document.querySelectorAll(".slot-btn");
-  allBtn.forEach(btn=>{
-    btn.disabled = false
-  })
-  allBtn.forEach(btn=>{
-  
-    
-  allBtn.forEach(btn=>{
-    
-  })
-
-  currentUser.userSlot = event.target.innerText
-  event.target.disabled = true;
-  console.dir(event)
-  
-  pIndex = event.target.dataset.parentindex;
-  index = event.target.dataset.index;
-  // createCalender()
 
 
-
-
-  //   console.dir(event.target.dataset);
-  //   console.log(event.target.dataset.parentindex);
-
-
-  // let selectedSlot =
-  //   slotdates[event.target.dataset.parentindex].slot[
-  //     event.target.dataset.index
-  //   ];
-  // selectedSlot.isTrue = false;
-
-
-  // createCalender();
-
-  //   selectedSlot = true;
  
+  bookedSlot = event.target.innerText;
+  bookedDate = event.target.parentNode.firstChild.innerText;
+  
+  parentSlotIndex = event.target.dataset.parentindex
+  slotIndex =  event.target.dataset.index
+  
+  let allBtn = document.querySelectorAll(".slot-btn");
+  allBtn.forEach(btn => {
+    btn.disabled = false;
+  })
+  disableSelectedSlot();
+  event.target.disabled = true;
+  // createCalender()
 }
+
+function disableSelectedSlot() {
+  let allBtn = document.querySelectorAll(".slot-btn");
+  allBtn.forEach(btn => {
+    if(slotdates[btn.dataset.parentindex].slot[btn.dataset.index].isTrue === false){
+      btn.disabled = true
+    }
+  })
+}
+
 displayWashingModeUI();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function clearDisabledSlot(btn) {
-//   console.log(btn);
-//   slotdates.forEach((eachslot) => {
-//     eachslot.slot.forEach((slotime) => {
-//       btn.disabled = true;
-//     });
-//   });
-// }
