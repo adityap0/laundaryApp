@@ -1,0 +1,216 @@
+.flex{
+    display: flex;
+}
+.flexc{
+    display: flex;
+    flex-direction: column;
+}
+.space{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+.center{
+    justify-content: center;
+}
+
+body{
+    font-family: 'Farro', sans-serif;
+    background: url("./media/69.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-page {
+    height: 80vh;
+    margin: 1.2rem 4rem .75rem 4rem;
+    .image-div{
+        position: relative;
+        width: 40%;
+        img{
+            width: 100%;
+        }
+    }
+.userInfo{
+    text-align: right;
+    cite{
+        font-size: 2.5rem;
+    }
+}
+}
+.hero{
+
+    // border: 1px solid;
+    .module-selector{
+        margin: 100px;
+        margin-top: 150px;
+    }
+}
+.rotate{
+    -webkit-transition: -webkit-transform 1s;
+    &:hover {
+        -webkit-transform : rotate(360deg) translateZ(0);
+    }
+}
+
+.modulelist{
+    position: relative;
+    .pos0{
+        position: absolute;
+        top: 140px;
+        left:390px;
+        color: rgb(255, 82, 111);
+        font-weight: 700;
+        // font-size: 32px;
+
+    }
+    .button-controller {
+        color: #07a8c9de;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .pos1{
+        
+        position: absolute;
+        top: 200px;
+        right: 140px;
+    }
+    .pos2{
+        position: absolute;
+        top: 290px;
+        right: 90px;
+    }
+    .pos3{
+        position: absolute;
+        bottom: 300px;
+        right: 105px;
+    }
+    .pos4{
+        position: absolute;
+        bottom: 200px;
+        right: 150px;
+    }
+    .pos5{
+        position: absolute;
+        top: 200px;
+        left: 200px;
+    }
+    .pos6{
+        position: absolute;
+        top: 290px;
+        left: 90px;
+    }
+    .pos7{
+        position: absolute;
+        bottom: 300px;
+        left: 115px;
+    }
+    .pos8{
+        position: absolute;
+        bottom: 200px;
+        left: 130px;
+    }
+    .pos9{
+        position: absolute;
+        bottom: 110px;
+        left: 360px;
+    }
+}
+.lcdisplay{
+    position: absolute;
+    // background: #b2e6f0;
+    background-image: url("/laundaryApp/media/69.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 312px;
+    width: 312px;
+    border-radius: 50%;
+    bottom: 230px;
+    left: 105px;
+}
+.submitmodule{
+    border: 1px solid;
+    font-size: 20px;
+    padding: 10px 50px;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.slotbuttons {
+    // border: 1px solid;
+    padding-top: 160px;
+    ul {
+        h2{
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        display: flex; 
+        margin-top: 40px;
+    //   margin-right: 5rem;
+      margin-bottom: 5px;
+      li{
+         
+          margin : 10px;
+      }
+       button {
+
+           padding: 0;
+           padding: 10px 20px;
+            // text-align: center;
+        //    height: 10px;
+        //    width: 10px;
+       
+            font-size: 1rem;
+           border: 1px solid;
+           margin: 0;
+           margin: {
+               top: 10px;
+           };
+           &:hover{
+            background: #3cb8ce;
+        }
+       }
+    }
+}
+
+.display-off{
+    display: none;
+}
+
+// login DIV
+.login{
+    padding: 20px;
+    border: 2px solid;
+    input{
+        font-size: 22px;
+    }
+    input[type="submit"]{
+        cursor: pointer;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+.overlay{
+    background: rgba(255, 255, 255,0.5);
+    position: absolute;
+    border: 1px solid;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // width: 100wh;
+    // height: 100vh;
+}
+
+.confirmpage{
+    text-align: center;
+    p{
+        padding: 20px;
+    }
+}
+.goback{
+    border: 1px solid;
+   font-size: 18px;
+}

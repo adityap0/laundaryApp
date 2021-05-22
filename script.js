@@ -7,6 +7,7 @@ let userName, userNum, userModule, bookedSlot, bookedDate;
 let parentSlotIndex, slotIndex ;
 
 form.addEventListener("submit", handleForm);
+
 function handleForm(event) {
   event.preventDefault();
   let name = event.target.elements.fname.value;
@@ -44,6 +45,10 @@ function displayWashingModeUI() {
     li.append(a);
     ul.append(li);
   });
+  users.forEach((item)=>{
+     slotdates[item.parentIndex].slot[item.childIndex].isTrue = false;
+    //  console.log(typeof item.parentIndex, item.childIndex)
+  })
 }
 
 function handleFunctionality(event) {
@@ -70,14 +75,27 @@ function handleSubmit(event) {
     currentUser.bookedSlot = bookedSlot;
     currentUser.bookedDate = bookedDate;
     currentUser.selectedModule = userModule
-    slotdates[parentSlotIndex].slot[slotIndex].isTrue = false;
-    localStorage.setItem("slotdates", JSON.stringify(slotdates));
+    currentUser.parentIndex = +parentSlotIndex;
+    currentUser.childIndex = +slotIndex;
+    
+
+    // slotdates[parentSlotIndex].slot[slotIndex].isTrue = false;
+
+    // localStorage.setItem("slotdates", JSON.stringify(slotdates));
 
      users.push(currentUser);
      localStorage.setItem("users", JSON.stringify(users));
-     currentUSer = {};
-     alert("your slot has booked.")
+
+     console.log(currentUser.username,
+      currentUser.number,
+      currentUser.bookedSlot,
+      currentUser.bookedDate,
+      currentUser.selectedModule,
+      currentUser.parentIndex,
+      currentUser.childIndex)
   }
+     currentUSer = {};
+
   
 }
 
@@ -117,8 +135,9 @@ function createCalender() {
 
 function handleSlot(event) {
 
+//  console.log(event.target.dataset.parentindex);
+//  console.log(event.target.dataset.index)
 
- 
   bookedSlot = event.target.innerText;
   bookedDate = event.target.parentNode.firstChild.innerText;
   
