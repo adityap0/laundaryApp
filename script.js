@@ -58,6 +58,7 @@ function createCalender() {
     li.append(h2);
     h2.innerText = item.date;
     item.slot.forEach((slotime, index) => {
+      //   clearDisabledSlot(button);
       let button = document.createElement("button");
       button.innerText = slotime.time;
       button.setAttribute("data-parentIndex", parentIndex);
@@ -65,8 +66,14 @@ function createCalender() {
       //   button.disabled = true;
       //   clearDisabledSlot(button);
       if (slotime.isTrue === false) {
+        // console.log(button);
+        // console.dir(button.dataset.index);
         button.disabled = true;
-        clearDisabledSlot(button);
+        let slotIndex = button.dataset.index;
+        let pindex = button.dataset.parentIndex;
+        clearDisabledSlot(slotIndex, pindex, button);
+        // let pindex = button.parentIndex;
+        // clearDisabledSlot(button);
       }
       //   button.setAttribute("isTrue", false);
       button.addEventListener("click", handleSlot);
@@ -94,11 +101,10 @@ function handleSlot(event) {
 }
 displayWashingModeUI();
 
-// function clearDisabledSlot(btn) {
-//   console.log(btn);
-//   slotdates.forEach((eachslot) => {
-//     eachslot.slot.forEach((slotime) => {
-//       btn.disabled = true;
-//     });
-//   });
-// }
+function clearDisabledSlot(id, pid, btn) {
+  slotdates.forEach((eachslot) => {
+    eachslot.slot.forEach((slotime) => {
+      btn.disabled = false;
+    });
+  });
+}
