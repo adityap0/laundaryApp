@@ -60,7 +60,6 @@ function createCalender() {
     item.slot.forEach((slotime, index) => {
       let button = document.createElement("button");
       button.innerText = slotime.time;
-      //   button.id = Number(String(item.date) + index);
       button.setAttribute("data-parentIndex", parentIndex);
       button.setAttribute("data-index", index);
       //   button.disabled = true;
