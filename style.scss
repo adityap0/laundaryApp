@@ -1,38 +1,236 @@
 @import "reset";
+@import "temp";
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 32px;
-  border: 1px solid;
-  text-align: center;
+.flex {
+  display: flex;
 }
-.display {
-  margin: 0 auto;
-  margin-top: 100px;
-  border: 1px solid;
-  height: 200px;
-  width: 400px;
+.flexc {
+  display: flex;
+  flex-direction: column;
 }
-button {
-  margin: 50px 0;
+.space {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.center {
+  justify-content: center;
+}
+
+body {
+  font-family: "Farro", sans-serif;
+  background: url("./media/69.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-page {
+  height: 80vh;
+  margin: 1.2rem 4rem 0.75rem 4rem;
+  .image-div {
+    position: relative;
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+  .userInfo {
+    text-align: right;
+    cite {
+      font-size: 2.5rem;
+    }
+  }
+}
+.hero {
+  // border: 1px solid;
+  .module-selector {
+    margin: 100px;
+    margin-top: 150px;
+  }
+}
+.rotate {
+  -webkit-transition: -webkit-transform 1s;
+  &:hover {
+    -webkit-transform: rotate(360deg) translateZ(0);
+  }
+}
+
+.modulelist {
+  position: relative;
+  .pos0 {
+    position: absolute;
+    top: 140px;
+    left: 390px;
+    color: rgb(255, 82, 111);
+    font-weight: 700;
+    // font-size: 32px;
+  }
+  .button-controller {
+    color: #07a8c9de;
+    font-weight: 600;
+    letter-spacing: 1px;
+    &:hover {
+      font-size: 18px;
+      color: rgb(255, 82, 111);
+    }
+  }
+  .pos1 {
+    position: absolute;
+    top: 200px;
+    right: 140px;
+  }
+  .pos2 {
+    position: absolute;
+    top: 290px;
+    right: 90px;
+  }
+  .pos3 {
+    position: absolute;
+    bottom: 300px;
+    right: 105px;
+  }
+  .pos4 {
+    position: absolute;
+    bottom: 200px;
+    right: 150px;
+  }
+  .pos5 {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
+  .pos6 {
+    position: absolute;
+    top: 290px;
+    left: 90px;
+  }
+  .pos7 {
+    position: absolute;
+    bottom: 300px;
+    left: 115px;
+  }
+  .pos8 {
+    position: absolute;
+    bottom: 200px;
+    left: 130px;
+  }
+  .pos9 {
+    position: absolute;
+    bottom: 110px;
+    left: 360px;
+  }
+}
+.lcdisplay {
+  position: absolute;
+  // background: #b2e6f0;
+  background-image: url("media/69.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 312px;
+  width: 312px;
+  border-radius: 50%;
+  bottom: 222px;
+  left: 103px;
+
+  p {
+    margin-top: 5.5rem;
+    margin-left: 7.5rem;
+    font-family: "Mate SC", serif;
+    .degree {
+      font-size: 60px;
+      margin-bottom: 1rem;
+    }
+    .mode {
+      font-size: 25px;
+    }
+  }
+}
+.submitmodule {
   border: 0;
-  padding: 32px;
-  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 50px;
+  position: absolute;
+  bottom: 56px;
+  right: 375px;
+  border-radius: 4px;
+  background-color: #07a8c9de;
+  color: #cdced0;
+  &:hover {
+    background: #858181;
+  }
 }
 
-// Login
+.slotbuttons {
+  // border: 1px solid;
+  padding-top: 160px;
+  .slot-ul {
+    .h2-header {
+      margin-top: 15px;
+      font-size: 20px;
+      margin-left: 1rem;
+    }
+    display: flex;
+    margin-top: 40px;
+    //   margin-right: 5rem;
+    margin-bottom: 5px;
+    .slot-li {
+      margin: 5px;
+    }
+    .slot-button {
+      padding: 0;
+      padding: 10px 20px;
+
+      font-size: 1rem;
+      border: 1px solid;
+      margin: 0;
+      margin: {
+        top: 10px;
+      }
+      &:hover {
+        background: #3cb8ce;
+      }
+    }
+  }
+}
+
 .display-off {
   display: none;
 }
-// .login {
-//   // display: none;
-// }
-.userinfo {
-  text-align: right;
-  .signout {
-    width: 10%;
-    border: 1px solid;
+
+// login DIV
+.login {
+  padding: 20px;
+  border: 2px solid;
+  input {
+    font-size: 22px;
   }
+  input[type="submit"] {
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.overlay {
+  // background: rgba(255, 255, 255,0.9);
+  position: absolute;
+  border: 1px solid;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  // width: 100wh;
+  // height: 100vh;
+}
+
+.confirmpage {
+  text-align: center;
+  p {
+    padding: 20px;
+  }
+}
+.goback {
+  border: 1px solid;
+  font-size: 18px;
 }

@@ -1,14 +1,56 @@
 let modules = [
   {
     mode: "Normally Soiled",
-    time: 90,
+    time: "1 hours 50 mins",
     temp: 30,
     isTrue: false,
   },
   {
     mode: "Heavily Soiled",
-    time: 120,
+    time: "2 hours 0 min",
     temp: 27,
+    isTrue: false,
+  },
+  {
+    mode: "Express 15°",
+    time: "1 hours 50 mins",
+    temp: 30,
+    isTrue: false,
+  },
+  {
+    mode: "Cradle Wash",
+    time: "2 hours 0 min",
+    temp: 27,
+    isTrue: false,
+  },
+  {
+    mode: "Wool",
+    time: "1 hours 50 mins",
+    temp: 30,
+    isTrue: false,
+  },
+  {
+    mode: "Demo / Drain",
+    time: "2 hours 0 min",
+    temp: 27,
+    isTrue: false,
+  },
+  {
+    mode: "Spin Dry",
+    time: "1 hours 50 mins",
+    temp: 30,
+    isTrue: false,
+  },
+  {
+    mode: "Lingerie",
+    time: "2 hours 0 min",
+    temp: 27,
+    isTrue: false,
+  },
+  {
+    mode: "Demo / Drain",
+    time: "1 hours 50 mins",
+    temp: 30,
     isTrue: false,
   },
 ];
@@ -58,7 +100,7 @@ let slotdates = [
   },
 ];
 
-localStorage.setItem("slotdates", JSON.stringify(slotdates));
+// slotdates = localStorage.setItem("slotdates", JSON.stringify(slotdates));
 
 // let users = [
 //   // {
@@ -68,14 +110,13 @@ localStorage.setItem("slotdates", JSON.stringify(slotdates));
 //   //   selectedModule: "Normally Soiled",
 //   // },
 // ];
-let users = localStorage.getItem('users')
- ? JSON.parse(localStorage.getItem('users'))
- : [] ;
+let users = localStorage.getItem("users")
+  ? JSON.parse(localStorage.getItem("users"))
+  : [];
 
-let currentUser = 
-  {
-    // username: "Deepak",
-    // number: "9650",
-    // bookedSlot: "21 May, 8:00",
-    // selectedModule: "Normally Soiled",
-  }
+let currentUser = {
+  // username: "Deepak",
+  // number: "9650",
+  // bookedSlot: "21 May, 8:00",
+  // selectedModule: "Normally Soiled",
+};
