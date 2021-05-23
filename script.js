@@ -4,7 +4,7 @@ let login = document.querySelector(".login");
 let form = document.querySelector("form");
 
 let userName, userNum, userModule, bookedSlot, bookedDate;
-let parentSlotIndex, slotIndex ;
+let parentSlotIndex, slotIndex;
 
 form.addEventListener("submit", handleForm);
 function handleForm(event) {
@@ -52,35 +52,30 @@ function handleFunctionality(event) {
     modules[index].temp + " " + modules[index].mode + "" + modules[index].time;
 }
 
-
-
 submitWashingmode.addEventListener("click", handleSubmit);
 
 function handleSubmit(event) {
-  if(event.target.innerText === "Submit"){
+  if (event.target.innerText === "Submit") {
     // console.log(event.target.innerText)
     createCalender();
     submitWashingmode.innerText = "Confirm";
+  } else {
+    console.log(event);
 
-  }else{
-    console.log(event)
-    
     currentUser.username = userName;
     currentUser.number = userNum;
     currentUser.bookedSlot = bookedSlot;
     currentUser.bookedDate = bookedDate;
-    currentUser.selectedModule = userModule
+    currentUser.selectedModule = userModule;
     slotdates[parentSlotIndex].slot[slotIndex].isTrue = false;
     localStorage.setItem("slotdates", JSON.stringify(slotdates));
 
-     users.push(currentUser);
-     localStorage.setItem("users", JSON.stringify(users));
-     currentUSer = {};
-     alert("your slot has booked.")
+    users.push(currentUser);
+    localStorage.setItem("users", JSON.stringify(users));
+    currentUSer = {};
+    alert("your slot has booked.");
   }
-  
 }
-
 
 // console.log(timeArry);
 function createCalender() {
@@ -98,52 +93,35 @@ function createCalender() {
       button.classList.add("slot-btn");
       button.setAttribute("data-parentIndex", parentIndex);
       button.setAttribute("data-index", index);
-    
+
       //   button.disabled = true;
       //   clearDisabledSlot(button);
-<<<<<<< HEAD
-      if (slotime.isTrue === false) {
-        // console.log(button);
-        // console.dir(button.dataset.index);
-        button.disabled = true;
-        let slotIndex = button.dataset.index;
-        let pindex = button.dataset.parentIndex;
-        clearDisabledSlot(slotIndex, pindex, button);
-        // let pindex = button.parentIndex;
-        // clearDisabledSlot(button);
-      }
-      //   button.setAttribute("isTrue", false);
-=======
       // if (slotime.isTrue === false) {
       //   button.disabled = true;
       // }
-  
->>>>>>> e28df305afd66160333faad5e17a2a713eaaa6b3
+
       button.addEventListener("click", handleSlot);
-      
+
       li.append(button);
     });
     ul.append(li);
     calenderoot.append(li);
   });
 
-  disableSelectedSlot()
+  disableSelectedSlot();
 }
 
 function handleSlot(event) {
-
-
- 
   bookedSlot = event.target.innerText;
   bookedDate = event.target.parentNode.firstChild.innerText;
-  
-  parentSlotIndex = event.target.dataset.parentindex
-  slotIndex =  event.target.dataset.index
-  
+
+  parentSlotIndex = event.target.dataset.parentindex;
+  slotIndex = event.target.dataset.index;
+
   let allBtn = document.querySelectorAll(".slot-btn");
-  allBtn.forEach(btn => {
+  allBtn.forEach((btn) => {
     btn.disabled = false;
-  })
+  });
   disableSelectedSlot();
   event.target.disabled = true;
   // createCalender()
@@ -151,23 +129,14 @@ function handleSlot(event) {
 
 function disableSelectedSlot() {
   let allBtn = document.querySelectorAll(".slot-btn");
-  allBtn.forEach(btn => {
-    if(slotdates[btn.dataset.parentindex].slot[btn.dataset.index].isTrue === false){
-      btn.disabled = true
+  allBtn.forEach((btn) => {
+    if (
+      slotdates[btn.dataset.parentindex].slot[btn.dataset.index].isTrue ===
+      false
+    ) {
+      btn.disabled = true;
     }
-  })
-}
-<<<<<<< HEAD
-displayWashingModeUI();
-
-function clearDisabledSlot(id, pid, btn) {
-  slotdates.forEach((eachslot) => {
-    eachslot.slot.forEach((slotime) => {
-      btn.disabled = false;
-    });
   });
 }
-=======
 
 displayWashingModeUI();
->>>>>>> e28df305afd66160333faad5e17a2a713eaaa6b3
