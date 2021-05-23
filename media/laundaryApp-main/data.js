@@ -1,58 +1,16 @@
 let modules = [
   {
     mode: "Normally Soiled",
-    time: "1 hours 50 mins",
+    time: 90,
     temp: 30,
     isTrue: false,
   },
   {
     mode: "Heavily Soiled",
-    time: "2 hours 0 min",
+    time: 120,
     temp: 27,
     isTrue: false,
   },
-  {
-    mode: "Express 15°",
-    time: "1 hours 50 mins",
-    temp: 30,
-    isTrue: false,
-  },
-  {
-    mode: "Cradle Wash",
-    time: "2 hours 0 min",
-    temp: 27,
-    isTrue: false,
-  },
-  {
-    mode: "Wool",
-    time: "1 hours 50 mins",
-    temp: 30,
-    isTrue: false,
-  },
-  {
-    mode: "Demo / Drain",
-    time: "2 hours 0 min",
-    temp: 27,
-    isTrue: false,
-  },
-  {
-    mode: "Spin Dry",
-    time: "1 hours 50 mins",
-    temp: 30,
-    isTrue: false,
-  },
-  {
-    mode: "Lingerie",
-    time: "2 hours 0 min",
-    temp: 27,
-    isTrue: false,
-  },
-  {
-    mode: "Demo / Drain",
-    time: "1 hours 50 mins",
-    temp: 30,
-    isTrue: false,
-  }
 ];
 
 let slotdates = [
@@ -100,7 +58,7 @@ let slotdates = [
   },
 ];
 
-// slotdates = localStorage.setItem("slotdates", JSON.stringify(slotdates));
+localStorage.setItem("slotdates", JSON.stringify(slotdates));
 
 // let users = [
 //   // {

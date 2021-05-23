@@ -4,42 +4,182 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="login">
-        <form action="#" method="get">
-          <label for="fname">First name:</label>
-          <input type="text" id="fname" name="fname" /><br /><br />
-          <label for="number">Mobile Number</label>
-          <input type="text" id="num" name="num" /><br /><br />
-          <input type="submit" value="Submit" />
-        </form>
+  
+    <section class="overlay flex align-center center">
+      <div class="login z">
+          <form action="#" method="get" class="flexc center">
+              <input type="text" id="fname" name="fname" placeholder="Enter name" required><br />
+              <input type="text" id="num" name="num" placeholder="Enter phone number" required><br />
+              <input type="submit" value="SUBMIT" />
+            </form>
       </div>
-    </div>
-
-    <div class="container process">
-      <article class="userinfo">
-        <cite>Hi! Deepak</cite>
-        <button class="signout">Sign-Out</button>
-      </article>
-      <!-- Washing Machine Modes -->
-      <ul></ul>
-      <button class="submitWashingmode">Submit</button>
-      <!-- Slot Booking Timings -->
-      <div class="calender">
-        <ul></ul>
+      <div class="confirmpage display-off">
+              <p class="confirmationText"></p>
+              <button class="goback">
+                <a href="index.html">Go Back</a></button>
       </div>
-      <div class="display"></div>
-    </div>
+  
+  </section>
 
-    <div class="confirmed-slot">
-      <p>Thank you for booking your request has been accepted</p>
-    </div>
+    <section class="main-page display-off">
 
-    <script src="/laundaryApp/data.js"></script>
-    <script src="/laundaryApp/script.js"></script>
+      <div class="userInfo">
+          <cite>👨🏻</cite>
+      </div>
+      
+      <div class="hero flex space">
+          <div class="image-div">
+              <img src="media/was.png" alt="washingMachinePic">
+              <div class="lcdisplay">
+                <p></p>
+              </div>
+              </div>
+              <div class="modulelist">
+                  <div class="module-selector rotate">
+                      <img src="media/knobfinally.png" alt="knob">
+                  </div>
+                  <span class="pos0">Off</span>
+                  <ul class="all-modes">
+                      <!-- <li class="pos1"> 
+                          <a  class="button-controller" href="#">
+                              Normally Soiled
+                          </a>
+                      </li>
+                      <li class="pos2"> 
+                          <a class="button-controller" href="#">
+                              Heavily Soiled
+                          </a>
+                      </li>
+                      <li class="pos3">
+                          <a class="button-controller" href="#">
+                              Express 15°
+                          </a>
+                      </li>
+                      <li class="pos4">
+                          <a class="button-controller" href="#">
+                              Cradle Wash
+                          </a>
+                      </li>
+                      <li class="pos5">
+                          <a class="button-controller" href="#">
+                              Wool
+                          </a>
+                      </li>
+                      <li class="pos6">
+                          <a class="button-controller" href="#">
+                              Demo / Drain
+                          </a>
+                      </li>
+                      <li class="pos7">
+                          <a class="button-controller" href="#">
+                              Spin Dry
+                          </a>
+                      </li>
+                      <li class="pos8">
+                          <a class="button-controller" href="#">
+                              Lingerie
+                          </a>
+                      </li>
+                      <li class="pos9">
+                          <a class="button-controller" href="#">
+                              Demo / Drain
+                          </a>
+                      </li> -->
+                  </ul>
+                  
+              </div>
+              <button class="submitmodule">SUBMIT</button>
+              <div class="slotbuttons" >
+                  <!-- <ul class="align-center">
+                      <h2>22 May</h2>
+
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                  </ul>
+                  <ul class="align-center">
+                      <h2>22 May</h2>
+
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                  </ul>
+                  <ul class="align-center">
+                      <h2>22 May</h2>
+
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                      <li>
+                          <button>8:00</button>
+                      </li>
+                  </ul> -->
+              </div>
+          
+              
+      </div>
+  </section>
+
+  
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
